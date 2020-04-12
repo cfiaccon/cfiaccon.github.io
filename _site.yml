@@ -1,6 +1,6 @@
 name: "fiacconi-lab"
 navbar:
-  title: "Fiacconi Lab Website"
+  title: "Chris M. Fiacconi"
   left:
     - text: "Home"
       href: index.html
