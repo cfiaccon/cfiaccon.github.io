@@ -1,0 +1,19 @@
+name: "fiacconi-lab"
+navbar:
+  title: "Fiacconi Lab Website"
+  left:
+    - text: "Home"
+      href: index.html
+    - text: "Research"
+      href: Research.html
+    - text: "Publications"
+      href: Publications.html
+    - text: "People"
+      href: People.html
+    - text: "Teaching"
+      href: Teaching.html
+      
+output: 
+  html_document:
+    theme: cosmo
+output_dir: "."
