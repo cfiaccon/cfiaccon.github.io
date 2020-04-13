@@ -19,5 +19,5 @@ navbar:
       
 output: 
   html_document:
-    theme: paper
+    theme: cosmo
 output_dir: "."
