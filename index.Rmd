@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Chris M. Fiacconi's website!"
+title: "Welcome!"
 output: 
   html_document:
     theme: cosmo 
@@ -7,3 +7,11 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+**Chris M. Fiacconi** is an Assistant Professor in the Department of Psychology at the University of Guelph (located in Guelph, Ontario, Canada). He is a cognitive psychologist with research interests in the area of human learning and memory.
+
+My research program is centered on understanding basic human cognitive processes that support the encoding and retrieval of new information. I am particularly interested in the inferential processes that guide the monitoring, assessment and regulation of learning. This work aims to both advance our understanding of basic learning and memory principles, and to enhance the effectiveness of self-regulated learning strategies in educational settings.
+
+I also teach a variety of courses within the Psychology Department at the University of Guelph. Under the **Teaching** section, you can find various materials that I have prepared for both undergraduate and graduate courses in statistics and computer programming. I am an enthusiast of the [R programming environment](https://r-project.org), and I will post materials on how to use *R* for statistical analyses and other data-related operations.
+
+![](/Chris_headshot.jpg)
