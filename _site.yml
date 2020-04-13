@@ -8,8 +8,6 @@ navbar:
       href: Research.html
     - text: "Publications"
       href: Publications.html
-    - text: "People"
-      href: People.html
     - text: "Teaching"
       menu: 
         - text: "PSYC 6780 (Programming Skills for Quantitative Research)"
