@@ -13,7 +13,7 @@ navbar:
     - text: "Teaching"
       menu: 
         -text: "PSYC 6780"
-        href: PSYC_6780.html
+         href: PSYC_6780.html
       
 output: 
   html_document:
