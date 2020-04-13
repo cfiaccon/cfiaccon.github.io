@@ -1,7 +1,7 @@
 name: "Chris M. Fiacconi"
 navbar:
   title: "Chris M. Fiacconi"
-  right:
+  left:
     - text: "Home"
       href: index.html
     - text: "Research"
@@ -12,8 +12,10 @@ navbar:
       href: People.html
     - text: "Teaching"
       menu: 
-        -text: "PSYC 6780"
-         href: PSYC_6780.html
+        - text: "PSYC 6780"
+          href: PSYC_6780.html
+        - text: "PSYC 6940"
+          href: PSYC_6940.html
       
 output: 
   html_document:
