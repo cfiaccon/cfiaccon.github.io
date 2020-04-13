@@ -11,7 +11,9 @@ navbar:
     - text: "People"
       href: People.html
     - text: "Teaching"
-      href: Teaching.html
+      menu: 
+        -text: "PSYC 6780"
+         href: PSYC_6780.html
       
 output: 
   html_document:

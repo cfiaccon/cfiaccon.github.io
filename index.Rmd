@@ -1,8 +1,9 @@
 ---
-title: "Homepage"
+title: "Welcome to Chris M. Fiacconi's website!"
 output: 
   html_document:
     theme: cosmo 
 ---
-
-**Welcome to the Fiacconi Lab website!**
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
