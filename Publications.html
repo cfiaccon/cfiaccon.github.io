@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -83,7 +83,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -232,6 +231,7 @@ $(document).ready(function () {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -243,18 +243,6 @@ $(document).ready(function () {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -330,6 +318,7 @@ $(document).ready(function () {
 </center>
 <div id="forthcoming" class="section level2">
 <h2>forthcoming</h2>
+<p>Laursen, S.J., &amp; Fiacconi, C.M. (in press). Examining the effect of list composition on monitoring and control processes in metamemory. <em>Memory &amp; Cognition</em></p>
 <p>Mitton, E.E., &amp; Fiacconi C.M. (in press). Learning from (test) experience: testing without feedback promotes metacognitive sensitivity to near-perfect recognition performance. <em>Zeitschrift fuer Psychologie</em>.</p>
 <p>Fiacconi, C.M., &amp; Dollois, M.A. (in press). Does word frequency influence judgments of learning (JOLs)? A meta-analytic review. <em>Canadian Journal of Experimental Psychology</em>. <a href="https://doi.org/10.1037/cep0000206" class="uri">https://doi.org/10.1037/cep0000206</a></p>
 </div>
@@ -379,6 +368,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
