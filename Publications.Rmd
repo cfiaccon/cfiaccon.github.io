@@ -12,7 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## forthcoming
 
-Fiacconi, C.M. (in press). Re-examining the sources of variance in recognition confidence: A reply to Kantner & Dobbins (2019). *Psychonomic Bulletin & Review*.
+Fiacconi, C.M. (in press). Re-examining the sources of variance in recognition confidence: A reply to Kantner & Dobbins (2019). *Psychonomic Bulletin & Review*. 
 
 Dollois, M.A., & Fiacconi, C.M. (in press). Another look at the contribution of motoric fluency to metacognitive monitoring. *Canadian Journal of Experimental Psychology*.
 
