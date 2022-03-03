@@ -1,0 +1,69 @@
+---
+output: 
+  html_document:
+    theme: sandstone 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<center> <h1>**Journal Articles**</h1> </center>
+
+## forthcoming
+
+Fiacconi, C.M. (in press). Re-examining the sources of variance in recognition confidence: A reply to Kantner & Dobbins (2019). *Psychonomic Bulletin & Review*.
+
+Dollois, M.A., & Fiacconi, C.M. (in press). Another look at the contribution of motoric fluency to metacognitive monitoring. *Canadian Journal of Experimental Psychology*.
+
+Laursen, S.J., & Fiacconi, C.M. (in press). Constraints on the use of the memorizing effort heuristic. *Metacognition & Learning*.
+
+## published
+
+Laursen, S.J., & Fiacconi, C.M. (2021). Examining the effect of list composition on monitoring and control processes in metamemory. *Memory & Cognition*. https://doi.org/10.3758/s13421-020-01107-4
+
+Fiacconi, C.M., & Dollois, M.A. (2020). Does word frequency influence judgments of learning (JOLs)? A meta-analytic review. *Canadian Journal of Experimental Psychology*. https://doi.org/10.1037/cep0000206
+
+Mitton, E.E., & Fiacconi C.M. (2020). Learning from (test) experience: testing without feedback promotes metacognitive sensitivity to near-perfect recognition performance. *Zeitschrift fuer Psychologie, 228(4)*, 264-277. https://doi.org/10.1027/2151-2604/a000424
+
+Fiacconi, C.M., Cali, J.N., Lupianez, J., & Milliken, B. (2020). Coordinating the interaction between past and present: visual working memory for feature bindings overwritten by subsequent action to matching features. *Attention, Perception, & Psychophysics*. https://doi.org/10.3758/s13414-019-01880-8
+
+Fiacconi, C.M, Mitton, E.E., Laursen, S.J., & Skinner, J. (2020). Isolating the contribution of perceptual fluency to judgments of learning (JOLs): evidence for reactivity in measuring the influence of fluency. *Journal of Experimental Psychology: Learning, Memory, & Cognition, 46*, 926-944. https://doi.org/10.1037/xlm0000766
+
+Plater, L., Giammarco, M., Fiacconi, C.M., & Al-Aidroos, N. (2020). No role for activated long-term memory in attentional control settings. *Journal of Experimental Psychology: General, 149*, 209-221. https://doi.org/10.1037/xge0000642
+
+Clancy E. M., Fiacconi, C.M., & Fenske, M.J. (2019). Response inhibition immediately elicits negative affect and devalues associated stimuli: evidence from facial electromyography. *Progress in Brain Research, 247*, 169-191. https://doi.org/10.1016/bs.pbr.2019.03.019
+
+Fiacconi, C.M., Kouptsova, J.E., & Köhler, S. (2017). A role for visceral feeback and interoception in feelings-of-knowing. *Consciousness & Cognition, 53,* 70-80. https://doi.org/10.1016/j.concog.2017.06.001
+
+Fiacconi, C.M., & Owen, A.M. (2016). Using facial electromyography to detect preserved emotional processing in the vegetative state: A proof-of-principle study. *Clinical Neurophysiology, 127,* 3000-3006. https://doi.org/10.1016/j.clinph.2016.06.006
+
+Fiacconi, C.M., Peter, E.L., Owais, S., & Köhler, S. (2016). Knowing by heart: visceral autonomic feedback shapes recognition memory judgments. *Journal of Experimental Psychology: General, 145,* 559-572. https://doi.org/10.1037/xge0000164
+
+Fiacconi, C.M., Dekraker, J., & Kӧhler, S. (2015). Psychophysiological evidence for the role of emotion in adaptive memory. *Journal of Experimental Psychology: General, 144*, 925-933. https://doi.org/10.1037/xge0000097
+
+Fiacconi, C.M., & Owen, A.M. (2015). Using psychophysiological measures to examine the temporal profile of verbal humor elicitation. *PLoS ONE*. 10(9): e0135902. https://doi.org/10.1371/journal.pone.0135902
+
+Cali, J., Fiacconi, C.M., & Milliken, B. (2015). A response-binding effect in visual short-term memory. *Visual Cognition, 23,* 489-515. https://doi.org/10.1080/13506285.2015.1025893
+
+Fiacconi, C.M., Barkley, V., Duke, D., Finger, E.C., Rosenbaum, R.S., Carson, N., Gilboa, A., & Köhler, S. (2014). Nature and extent of person recognition impairments associated with Capgras Syndrome in Lewy Body Dementia. *Frontiers in Human Neuroscience, 8,* 726. https://doi.org/10.3389/fnhum.2014.00726
+
+Duke, D., Fiacconi, C.M., & Köhler, S. (2014). Parallel effects of perceptual fluency and positive affect on familiarity-based recognition memory for faces. *Frontiers in Psychology, 5,* 328.  https://doi.org/10.3389/fpsyg.2014.00328
+
+Fiacconi, C.M., & Milliken, B. (2013).  Visual memory for feature bindings: the disruptive effects of responding to new perceptual input. *Quarterly Journal of Experimental Psychology, 66,* 1572-1600. https://doi.org/10.1080/17470218.2012.753925
+
+Fiacconi, C.M., Harvey, E.C., Sekuler, A.B., & Bennett, P.J. (2013). The influence of aging on audio-visual temporal order judgments. *Experimental Aging Research, 39,* 179-193. https://doi.org/10.1080/0361073X.2013.761896
+
+Fiacconi, C.M., & Milliken, B. (2012). Contingency Blindness: location-identity binding mismatches obscure awareness of spatial contingencies and produce profound interference in visual working memory.  *Memory & Cognition, 40,* 932-945. https://doi.org/10.3758/s13421-012-0193-5
+
+Fiacconi, C.M., & Milliken, B. (2011). On the role of attention in generating explicit awareness of contingent relations: evidence from spatial priming.  *Consciousness & Cognition, 20,* 1433-1451. https://doi.org/10.1016/j.concog.2011.06.002
+
+Vaquero, J.M.M., Fiacconi, C.M., & Milliken, B. (2010).  Attention, awareness of contingencies, and control in spatial localization: a qualitative difference approach.  *Journal of Experimental Psychology: Human Perception & Performance, 36,* 1342-1357. https://doi.org/10.1037/a0020406
+
+Jansen, P.A., Fiacconi, C.M., & Gibson, L.C. (2010).  A computational vector-map model of neonate saccades: modeling the externality effect through refraction periods.  *Vision Research, 50,* 2551-2558. https://doi.org/10.1016/j.visres.2010.08.022
+
+<center> <h1>**Book Chapters**</h1> </center>
+
+Martin, C.B., Fiacconi, C.M., & Kӧhler, S. (2015). Déjà vu: A window into understanding the cognitive neuroscience of familiarity. In Duarte, A., Barense, M., & Addis, D.R.  (Eds.), *Handbook on the Cognitive Neuroscience of Memory*. Wiley-Blackwell.
+
+Milliken, B., & Fiacconi, C.M. (2014). Event integration, awareness, and short-term remembering. In D.S. Lindsay, C.M. Kelley, & A.P. Yonelinas (Eds.) *Remembering: Attributions, Processes, and Control in Human Memory*. New York: Psychology Press.
