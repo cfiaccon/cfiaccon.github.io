@@ -11,24 +11,38 @@
 
 
 
-<title></title>
+<title>Publications.knit</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.18/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -41,32 +55,8 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
+
 
 
 
@@ -76,10 +66,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -96,40 +82,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -157,7 +119,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -169,7 +131,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -179,11 +141,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -195,13 +174,12 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -209,16 +187,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -262,7 +233,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -281,7 +252,7 @@ $(document).ready(function () {
   <a href="Publications.html">Publications</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Teaching
      
     <span class="caret"></span>
@@ -303,7 +274,7 @@ $(document).ready(function () {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -318,40 +289,151 @@ $(document).ready(function () {
 </center>
 <div id="forthcoming" class="section level2">
 <h2>forthcoming</h2>
-<p>Fiacconi, C.M. (in press). Re-examining the sources of variance in recognition confidence: A reply to Kantner &amp; Dobbins (2019). <em>Psychonomic Bulletin &amp; Review</em></p>
-<p>Dollois, M.A., Poore-Buchhaupt, C.J., &amp; Fiacconi, C.M. (in press). Another look at the contribution of motoric fluency to metacognitive monitoring. <em>Canadian Journal of Experimental Psychology</em>.</p>
+<p>Fiacconi, C.M. (in press). Re-examining the sources of variance in
+recognition confidence: A reply to Kantner &amp; Dobbins (2019).
+<em>Psychonomic Bulletin &amp; Review</em></p>
 </div>
 <div id="published" class="section level2">
 <h2>published</h2>
-<p>Laursen, S.J., &amp; Fiacconi, C.M. (2022). Constraints on the use of the memorizing effort heuristic. <em>Metacognition &amp; Learning</em>.</p>
-<p>Laursen, S.J., &amp; Fiacconi, C.M. (2021). Examining the effect of list composition on monitoring and control processes in metamemory. <em>Memory &amp; Cognition</em>. <a href="https://doi.org/10.3758/s13421-020-01107-4" class="uri">https://doi.org/10.3758/s13421-020-01107-4</a></p>
-<p>Fiacconi, C.M., &amp; Dollois, M.A. (2020). Does word frequency influence judgments of learning (JOLs)? A meta-analytic review. <em>Canadian Journal of Experimental Psychology</em>. <a href="https://doi.org/10.1037/cep0000206" class="uri">https://doi.org/10.1037/cep0000206</a></p>
-<p>Mitton, E.E., &amp; Fiacconi C.M. (2020). Learning from (test) experience: testing without feedback promotes metacognitive sensitivity to near-perfect recognition performance. <em>Zeitschrift fuer Psychologie, 228(4)</em>, 264-277. <a href="https://doi.org/10.1027/2151-2604/a000424" class="uri">https://doi.org/10.1027/2151-2604/a000424</a></p>
-<p>Fiacconi, C.M., Cali, J.N., Lupianez, J., &amp; Milliken, B. (2020). Coordinating the interaction between past and present: visual working memory for feature bindings overwritten by subsequent action to matching features. <em>Attention, Perception, &amp; Psychophysics</em>. <a href="https://doi.org/10.3758/s13414-019-01880-8" class="uri">https://doi.org/10.3758/s13414-019-01880-8</a></p>
-<p>Fiacconi, C.M, Mitton, E.E., Laursen, S.J., &amp; Skinner, J. (2020). Isolating the contribution of perceptual fluency to judgments of learning (JOLs): evidence for reactivity in measuring the influence of fluency. <em>Journal of Experimental Psychology: Learning, Memory, &amp; Cognition, 46</em>, 926-944. <a href="https://doi.org/10.1037/xlm0000766" class="uri">https://doi.org/10.1037/xlm0000766</a></p>
-<p>Plater, L., Giammarco, M., Fiacconi, C.M., &amp; Al-Aidroos, N. (2020). No role for activated long-term memory in attentional control settings. <em>Journal of Experimental Psychology: General, 149</em>, 209-221. <a href="https://doi.org/10.1037/xge0000642" class="uri">https://doi.org/10.1037/xge0000642</a></p>
-<p>Clancy E. M., Fiacconi, C.M., &amp; Fenske, M.J. (2019). Response inhibition immediately elicits negative affect and devalues associated stimuli: evidence from facial electromyography. <em>Progress in Brain Research, 247</em>, 169-191. <a href="https://doi.org/10.1016/bs.pbr.2019.03.019" class="uri">https://doi.org/10.1016/bs.pbr.2019.03.019</a></p>
-<p>Fiacconi, C.M., Kouptsova, J.E., &amp; Köhler, S. (2017). A role for visceral feeback and interoception in feelings-of-knowing. <em>Consciousness &amp; Cognition, 53,</em> 70-80. <a href="https://doi.org/10.1016/j.concog.2017.06.001" class="uri">https://doi.org/10.1016/j.concog.2017.06.001</a></p>
-<p>Fiacconi, C.M., &amp; Owen, A.M. (2016). Using facial electromyography to detect preserved emotional processing in the vegetative state: A proof-of-principle study. <em>Clinical Neurophysiology, 127,</em> 3000-3006. <a href="https://doi.org/10.1016/j.clinph.2016.06.006" class="uri">https://doi.org/10.1016/j.clinph.2016.06.006</a></p>
-<p>Fiacconi, C.M., Peter, E.L., Owais, S., &amp; Köhler, S. (2016). Knowing by heart: visceral autonomic feedback shapes recognition memory judgments. <em>Journal of Experimental Psychology: General, 145,</em> 559-572. <a href="https://doi.org/10.1037/xge0000164" class="uri">https://doi.org/10.1037/xge0000164</a></p>
-<p>Fiacconi, C.M., Dekraker, J., &amp; Kӧhler, S. (2015). Psychophysiological evidence for the role of emotion in adaptive memory. <em>Journal of Experimental Psychology: General, 144</em>, 925-933. <a href="https://doi.org/10.1037/xge0000097" class="uri">https://doi.org/10.1037/xge0000097</a></p>
-<p>Fiacconi, C.M., &amp; Owen, A.M. (2015). Using psychophysiological measures to examine the temporal profile of verbal humor elicitation. <em>PLoS ONE</em>. 10(9): e0135902. <a href="https://doi.org/10.1371/journal.pone.0135902" class="uri">https://doi.org/10.1371/journal.pone.0135902</a></p>
-<p>Cali, J., Fiacconi, C.M., &amp; Milliken, B. (2015). A response-binding effect in visual short-term memory. <em>Visual Cognition, 23,</em> 489-515. <a href="https://doi.org/10.1080/13506285.2015.1025893" class="uri">https://doi.org/10.1080/13506285.2015.1025893</a></p>
-<p>Fiacconi, C.M., Barkley, V., Duke, D., Finger, E.C., Rosenbaum, R.S., Carson, N., Gilboa, A., &amp; Köhler, S. (2014). Nature and extent of person recognition impairments associated with Capgras Syndrome in Lewy Body Dementia. <em>Frontiers in Human Neuroscience, 8,</em> 726. <a href="https://doi.org/10.3389/fnhum.2014.00726" class="uri">https://doi.org/10.3389/fnhum.2014.00726</a></p>
-<p>Duke, D., Fiacconi, C.M., &amp; Köhler, S. (2014). Parallel effects of perceptual fluency and positive affect on familiarity-based recognition memory for faces. <em>Frontiers in Psychology, 5,</em> 328. <a href="https://doi.org/10.3389/fpsyg.2014.00328" class="uri">https://doi.org/10.3389/fpsyg.2014.00328</a></p>
-<p>Fiacconi, C.M., &amp; Milliken, B. (2013). Visual memory for feature bindings: the disruptive effects of responding to new perceptual input. <em>Quarterly Journal of Experimental Psychology, 66,</em> 1572-1600. <a href="https://doi.org/10.1080/17470218.2012.753925" class="uri">https://doi.org/10.1080/17470218.2012.753925</a></p>
-<p>Fiacconi, C.M., Harvey, E.C., Sekuler, A.B., &amp; Bennett, P.J. (2013). The influence of aging on audio-visual temporal order judgments. <em>Experimental Aging Research, 39,</em> 179-193. <a href="https://doi.org/10.1080/0361073X.2013.761896" class="uri">https://doi.org/10.1080/0361073X.2013.761896</a></p>
-<p>Fiacconi, C.M., &amp; Milliken, B. (2012). Contingency Blindness: location-identity binding mismatches obscure awareness of spatial contingencies and produce profound interference in visual working memory. <em>Memory &amp; Cognition, 40,</em> 932-945. <a href="https://doi.org/10.3758/s13421-012-0193-5" class="uri">https://doi.org/10.3758/s13421-012-0193-5</a></p>
-<p>Fiacconi, C.M., &amp; Milliken, B. (2011). On the role of attention in generating explicit awareness of contingent relations: evidence from spatial priming. <em>Consciousness &amp; Cognition, 20,</em> 1433-1451. <a href="https://doi.org/10.1016/j.concog.2011.06.002" class="uri">https://doi.org/10.1016/j.concog.2011.06.002</a></p>
-<p>Vaquero, J.M.M., Fiacconi, C.M., &amp; Milliken, B. (2010). Attention, awareness of contingencies, and control in spatial localization: a qualitative difference approach. <em>Journal of Experimental Psychology: Human Perception &amp; Performance, 36,</em> 1342-1357. <a href="https://doi.org/10.1037/a0020406" class="uri">https://doi.org/10.1037/a0020406</a></p>
-<p>Jansen, P.A., Fiacconi, C.M., &amp; Gibson, L.C. (2010). A computational vector-map model of neonate saccades: modeling the externality effect through refraction periods. <em>Vision Research, 50,</em> 2551-2558. <a href="https://doi.org/10.1016/j.visres.2010.08.022" class="uri">https://doi.org/10.1016/j.visres.2010.08.022</a></p>
+<p>Laursen, S.J., Wammes, J.D, Fiacconi, C.M. (2023).Examining the
+effect of expected test format and test difficulty on the frequency and
+mnemonic costs of mind wandering <em>Quarterly Journal of Experimental
+Psychology</em></p>
+<p>Dollois, M.A., Poore-Buchhaupt, C.J., &amp; Fiacconi, C.M. (in
+press). Another look at the contribution of motoric fluency to
+metacognitive monitoring. <em>Canadian Journal of Experimental
+Psychology</em>.</p>
+<p>Laursen, S.J., &amp; Fiacconi, C.M. (2022). Constraints on the use of
+the memorizing effort heuristic. <em>Metacognition &amp;
+Learning</em>.</p>
+<p>Laursen, S.J., &amp; Fiacconi, C.M. (2021). Examining the effect of
+list composition on monitoring and control processes in metamemory.
+<em>Memory &amp; Cognition</em>. <a
+href="https://doi.org/10.3758/s13421-020-01107-4"
+class="uri">https://doi.org/10.3758/s13421-020-01107-4</a></p>
+<p>Fiacconi, C.M., &amp; Dollois, M.A. (2020). Does word frequency
+influence judgments of learning (JOLs)? A meta-analytic review.
+<em>Canadian Journal of Experimental Psychology</em>. <a
+href="https://doi.org/10.1037/cep0000206"
+class="uri">https://doi.org/10.1037/cep0000206</a></p>
+<p>Mitton, E.E., &amp; Fiacconi C.M. (2020). Learning from (test)
+experience: testing without feedback promotes metacognitive sensitivity
+to near-perfect recognition performance. <em>Zeitschrift fuer
+Psychologie, 228(4)</em>, 264-277. <a
+href="https://doi.org/10.1027/2151-2604/a000424"
+class="uri">https://doi.org/10.1027/2151-2604/a000424</a></p>
+<p>Fiacconi, C.M., Cali, J.N., Lupianez, J., &amp; Milliken, B. (2020).
+Coordinating the interaction between past and present: visual working
+memory for feature bindings overwritten by subsequent action to matching
+features. <em>Attention, Perception, &amp; Psychophysics</em>. <a
+href="https://doi.org/10.3758/s13414-019-01880-8"
+class="uri">https://doi.org/10.3758/s13414-019-01880-8</a></p>
+<p>Fiacconi, C.M, Mitton, E.E., Laursen, S.J., &amp; Skinner, J. (2020).
+Isolating the contribution of perceptual fluency to judgments of
+learning (JOLs): evidence for reactivity in measuring the influence of
+fluency. <em>Journal of Experimental Psychology: Learning, Memory, &amp;
+Cognition, 46</em>, 926-944. <a
+href="https://doi.org/10.1037/xlm0000766"
+class="uri">https://doi.org/10.1037/xlm0000766</a></p>
+<p>Plater, L., Giammarco, M., Fiacconi, C.M., &amp; Al-Aidroos, N.
+(2020). No role for activated long-term memory in attentional control
+settings. <em>Journal of Experimental Psychology: General, 149</em>,
+209-221. <a href="https://doi.org/10.1037/xge0000642"
+class="uri">https://doi.org/10.1037/xge0000642</a></p>
+<p>Clancy E. M., Fiacconi, C.M., &amp; Fenske, M.J. (2019). Response
+inhibition immediately elicits negative affect and devalues associated
+stimuli: evidence from facial electromyography. <em>Progress in Brain
+Research, 247</em>, 169-191. <a
+href="https://doi.org/10.1016/bs.pbr.2019.03.019"
+class="uri">https://doi.org/10.1016/bs.pbr.2019.03.019</a></p>
+<p>Fiacconi, C.M., Kouptsova, J.E., &amp; Köhler, S. (2017). A role for
+visceral feeback and interoception in feelings-of-knowing.
+<em>Consciousness &amp; Cognition, 53,</em> 70-80. <a
+href="https://doi.org/10.1016/j.concog.2017.06.001"
+class="uri">https://doi.org/10.1016/j.concog.2017.06.001</a></p>
+<p>Fiacconi, C.M., &amp; Owen, A.M. (2016). Using facial
+electromyography to detect preserved emotional processing in the
+vegetative state: A proof-of-principle study. <em>Clinical
+Neurophysiology, 127,</em> 3000-3006. <a
+href="https://doi.org/10.1016/j.clinph.2016.06.006"
+class="uri">https://doi.org/10.1016/j.clinph.2016.06.006</a></p>
+<p>Fiacconi, C.M., Peter, E.L., Owais, S., &amp; Köhler, S. (2016).
+Knowing by heart: visceral autonomic feedback shapes recognition memory
+judgments. <em>Journal of Experimental Psychology: General, 145,</em>
+559-572. <a href="https://doi.org/10.1037/xge0000164"
+class="uri">https://doi.org/10.1037/xge0000164</a></p>
+<p>Fiacconi, C.M., Dekraker, J., &amp; Kӧhler, S. (2015).
+Psychophysiological evidence for the role of emotion in adaptive memory.
+<em>Journal of Experimental Psychology: General, 144</em>, 925-933. <a
+href="https://doi.org/10.1037/xge0000097"
+class="uri">https://doi.org/10.1037/xge0000097</a></p>
+<p>Fiacconi, C.M., &amp; Owen, A.M. (2015). Using psychophysiological
+measures to examine the temporal profile of verbal humor elicitation.
+<em>PLoS ONE</em>. 10(9): e0135902. <a
+href="https://doi.org/10.1371/journal.pone.0135902"
+class="uri">https://doi.org/10.1371/journal.pone.0135902</a></p>
+<p>Cali, J., Fiacconi, C.M., &amp; Milliken, B. (2015). A
+response-binding effect in visual short-term memory. <em>Visual
+Cognition, 23,</em> 489-515. <a
+href="https://doi.org/10.1080/13506285.2015.1025893"
+class="uri">https://doi.org/10.1080/13506285.2015.1025893</a></p>
+<p>Fiacconi, C.M., Barkley, V., Duke, D., Finger, E.C., Rosenbaum, R.S.,
+Carson, N., Gilboa, A., &amp; Köhler, S. (2014). Nature and extent of
+person recognition impairments associated with Capgras Syndrome in Lewy
+Body Dementia. <em>Frontiers in Human Neuroscience, 8,</em> 726. <a
+href="https://doi.org/10.3389/fnhum.2014.00726"
+class="uri">https://doi.org/10.3389/fnhum.2014.00726</a></p>
+<p>Duke, D., Fiacconi, C.M., &amp; Köhler, S. (2014). Parallel effects
+of perceptual fluency and positive affect on familiarity-based
+recognition memory for faces. <em>Frontiers in Psychology, 5,</em> 328.
+<a href="https://doi.org/10.3389/fpsyg.2014.00328"
+class="uri">https://doi.org/10.3389/fpsyg.2014.00328</a></p>
+<p>Fiacconi, C.M., &amp; Milliken, B. (2013). Visual memory for feature
+bindings: the disruptive effects of responding to new perceptual input.
+<em>Quarterly Journal of Experimental Psychology, 66,</em> 1572-1600. <a
+href="https://doi.org/10.1080/17470218.2012.753925"
+class="uri">https://doi.org/10.1080/17470218.2012.753925</a></p>
+<p>Fiacconi, C.M., Harvey, E.C., Sekuler, A.B., &amp; Bennett, P.J.
+(2013). The influence of aging on audio-visual temporal order judgments.
+<em>Experimental Aging Research, 39,</em> 179-193. <a
+href="https://doi.org/10.1080/0361073X.2013.761896"
+class="uri">https://doi.org/10.1080/0361073X.2013.761896</a></p>
+<p>Fiacconi, C.M., &amp; Milliken, B. (2012). Contingency Blindness:
+location-identity binding mismatches obscure awareness of spatial
+contingencies and produce profound interference in visual working
+memory. <em>Memory &amp; Cognition, 40,</em> 932-945. <a
+href="https://doi.org/10.3758/s13421-012-0193-5"
+class="uri">https://doi.org/10.3758/s13421-012-0193-5</a></p>
+<p>Fiacconi, C.M., &amp; Milliken, B. (2011). On the role of attention
+in generating explicit awareness of contingent relations: evidence from
+spatial priming. <em>Consciousness &amp; Cognition, 20,</em> 1433-1451.
+<a href="https://doi.org/10.1016/j.concog.2011.06.002"
+class="uri">https://doi.org/10.1016/j.concog.2011.06.002</a></p>
+<p>Vaquero, J.M.M., Fiacconi, C.M., &amp; Milliken, B. (2010).
+Attention, awareness of contingencies, and control in spatial
+localization: a qualitative difference approach. <em>Journal of
+Experimental Psychology: Human Perception &amp; Performance, 36,</em>
+1342-1357. <a href="https://doi.org/10.1037/a0020406"
+class="uri">https://doi.org/10.1037/a0020406</a></p>
+<p>Jansen, P.A., Fiacconi, C.M., &amp; Gibson, L.C. (2010). A
+computational vector-map model of neonate saccades: modeling the
+externality effect through refraction periods. <em>Vision Research,
+50,</em> 2551-2558. <a
+href="https://doi.org/10.1016/j.visres.2010.08.022"
+class="uri">https://doi.org/10.1016/j.visres.2010.08.022</a></p>
 <center>
 <h1>
 <strong>Book Chapters</strong>
 </h1>
 </center>
-<p>Martin, C.B., Fiacconi, C.M., &amp; Kӧhler, S. (2015). Déjà vu: A window into understanding the cognitive neuroscience of familiarity. In Duarte, A., Barense, M., &amp; Addis, D.R. (Eds.), <em>Handbook on the Cognitive Neuroscience of Memory</em>. Wiley-Blackwell.</p>
-<p>Milliken, B., &amp; Fiacconi, C.M. (2014). Event integration, awareness, and short-term remembering. In D.S. Lindsay, C.M. Kelley, &amp; A.P. Yonelinas (Eds.) <em>Remembering: Attributions, Processes, and Control in Human Memory</em>. New York: Psychology Press.</p>
+<p>Martin, C.B., Fiacconi, C.M., &amp; Kӧhler, S. (2015). Déjà vu: A
+window into understanding the cognitive neuroscience of familiarity. In
+Duarte, A., Barense, M., &amp; Addis, D.R. (Eds.), <em>Handbook on the
+Cognitive Neuroscience of Memory</em>. Wiley-Blackwell.</p>
+<p>Milliken, B., &amp; Fiacconi, C.M. (2014). Event integration,
+awareness, and short-term remembering. In D.S. Lindsay, C.M. Kelley,
+&amp; A.P. Yonelinas (Eds.) <em>Remembering: Attributions, Processes,
+and Control in Human Memory</em>. New York: Psychology Press.</p>
 </div>
 
 
@@ -363,7 +445,7 @@ $(document).ready(function () {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -381,7 +463,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
